@@ -1,18 +1,18 @@
 import Foundation
 
-class Helper {
+struct Helper {
     
-    private var people: [Person] = []
+    private var people: [User] = []
     
     func getNames() -> [String] {
         var fullNames: [String] = []
         for person in people {
-            fullNames.append(person.getFullName())
+            fullNames.append(person.name.getFullName())
         }
         return fullNames
     }
     
-    func addName(_ person: Person) {
+    mutating func addName(_ person: User) {
         people.append(person)
     }
 }
