@@ -8,11 +8,11 @@ class Person {
         "\(firstName) \(lastName)"
     }
     
-    public func getFullName() -> String {
+    func getFullName() -> String {
         fullName
     }
     
-    public init(firstName: String, lastName: String) {
+    init(firstName: String, lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
     }

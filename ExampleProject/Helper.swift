@@ -4,11 +4,7 @@ class Helper {
     
     private var people: [Person] = []
     
-    public func addName(firstName: String, lastName: String) {
-        people.append(Person(firstName: firstName, lastName: lastName))
-    }
-    
-    private func getNames() -> [String] {
+    func getNames() -> [String] {
         var fullNames: [String] = []
         for person in people {
             fullNames.append(person.getFullName())
@@ -16,9 +12,7 @@ class Helper {
         return fullNames
     }
     
-    public func printNames(){
-        for person in getNames(){
-            print(person)
-        }
+    func addName(_ person: Person) {
+        people.append(person)
     }
 }
