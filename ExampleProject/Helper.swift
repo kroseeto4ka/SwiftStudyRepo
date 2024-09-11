@@ -14,6 +14,7 @@ struct Helper {
         return fullNames
     }
     
+    //mutating используется, тк метод меняет значения в структурах, которые являются типом значения
     mutating func addName(_ person: User) {
         people.append(person)
     }
