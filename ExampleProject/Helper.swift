@@ -9,7 +9,7 @@ struct Helper {
     func getNames() -> [String] {
         var fullNames: [String] = []
         for person in people {
-            fullNames.append(person.name.getFullName())
+            fullNames.append(person.getName().getFullName())
         }
         return fullNames
     }
