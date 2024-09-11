@@ -4,6 +4,8 @@ struct Helper {
     
     private var people: [User] = []
     
+    
+    //функция возвращает только имена, тк в задании не сказано выводить логин или пароль
     func getNames() -> [String] {
         var fullNames: [String] = []
         for person in people {
