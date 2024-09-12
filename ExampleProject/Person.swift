@@ -1,8 +1,8 @@
 import Foundation
 
 struct Person {
-    private var firstName: String
-    private var lastName: String
+    private let firstName: String
+    private let lastName: String
     
     var fullName: String {
         "\(firstName) \(lastName)"

@@ -9,9 +9,9 @@ import Foundation
 
 struct User {
     
-    private var login: String
-    private var password: String
-    private var name: Person
+    private let login: String
+    private let password: String
+    private let name: Person
     
     func getName() -> Person {
         name
