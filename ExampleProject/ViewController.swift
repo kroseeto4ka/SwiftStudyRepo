@@ -17,12 +17,12 @@ class ViewController: UIViewController {
     
     func printPeople(people: [User]){
         for person in people{
-            print("Full name: \(person.getName()); login: \(person.getLogin()); password: \(person.getPassword())")
+            print("Full name: \(person.getName().fullName); login: \(person.getLogin()); password: \(person.getPassword())")
         }
     }
     
     func createPeople(){
-        var people = Helper()
+        let people = Helper()
         
         people.addName(User(login: "Aboba123", password: "qwerty12345", name: Person(firstName: "Linus", lastName: "Torwalds")))
         people.addName(User(login: "CodeHacker420", password: "$f8K!h27Bf@4", name: Person(firstName: "Bjarne", lastName: "Stroustrup")))
