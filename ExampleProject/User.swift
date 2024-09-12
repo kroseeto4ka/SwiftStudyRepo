@@ -8,12 +8,21 @@
 import Foundation
 
 struct User {
+    
     private var login: String
     private var password: String
     private var name: Person
     
     func getName() -> Person {
-        return name
+        name
+    }
+    
+    func getPassword() -> String {
+        password
+    }
+    
+    func getLogin() -> String {
+        login
     }
     
     init(login: String, password: String, name: Person) {

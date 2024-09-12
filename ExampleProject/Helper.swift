@@ -1,21 +1,24 @@
 import Foundation
 
-struct Helper {
+class Helper {
     
     private var people: [User] = []
     
+    func getUsers() -> [User] {
+        return people
+    }
     
-    //функция возвращает только имена, тк в задании не сказано выводить логин или пароль
     func getNames() -> [String] {
         var fullNames: [String] = []
+        
         for person in people {
-            fullNames.append(person.getName().getFullName())
+            fullNames.append(person.getName().fullName)
         }
+        
         return fullNames
     }
     
-    //mutating используется, тк метод меняет значения в структурах, которые являются типом значения
-    mutating func addName(_ person: User) {
+    func addName(_ person: User) {
         people.append(person)
     }
 }

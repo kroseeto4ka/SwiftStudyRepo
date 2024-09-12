@@ -1,15 +1,11 @@
 import Foundation
 
-class Person {
+struct Person {
     private var firstName: String
     private var lastName: String
     
-    private var fullName: String {
+    var fullName: String {
         "\(firstName) \(lastName)"
-    }
-    
-    func getFullName() -> String {
-        fullName
     }
     
     init(firstName: String, lastName: String) {
