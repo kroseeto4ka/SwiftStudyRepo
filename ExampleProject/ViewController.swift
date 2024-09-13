@@ -15,13 +15,13 @@ class ViewController: UIViewController {
         createPeople()
     }
     
-    func printPeople(people: [User]){
-        for person in people{
+    private func printPeople(people: [User]){
+        for person in people {
             print("Full name: \(person.getName().fullName); login: \(person.getLogin()); password: \(person.getPassword())")
         }
     }
     
-    func createPeople(){
+    private func createPeople(){
         let people = Helper()
         
         people.addName(User(login: "Aboba123", password: "qwerty12345", name: Person(firstName: "Linus", lastName: "Torwalds")))

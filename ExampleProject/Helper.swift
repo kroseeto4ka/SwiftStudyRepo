@@ -2,10 +2,10 @@ import Foundation
 
 class Helper {
     
-    var people: [User] = []
+    private var people: [User] = []
     
     func getUsers() -> [User] {
-        return people
+        people
     }
     
     func getNames() -> [String] {
