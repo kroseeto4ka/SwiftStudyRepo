@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D20119142C921E6D00F0F7A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20119132C921E6D00F0F7A5 /* User.swift */; };
+		D2606B3E2C95DC27003C7479 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2606B3D2C95DC27003C7479 /* UserRepository.swift */; };
 		D2AA58F72C90409D00C3EE91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA58F62C90409D00C3EE91 /* AppDelegate.swift */; };
 		D2AA58F92C90409D00C3EE91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA58F82C90409D00C3EE91 /* SceneDelegate.swift */; };
 		D2AA58FB2C90409D00C3EE91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA58FA2C90409D00C3EE91 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		D20119132C921E6D00F0F7A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2606B3D2C95DC27003C7479 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D2AA58F32C90409D00C3EE91 /* ExampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AA58F62C90409D00C3EE91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AA58F82C90409D00C3EE91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				D2AA58F62C90409D00C3EE91 /* AppDelegate.swift */,
 				D2AA58F82C90409D00C3EE91 /* SceneDelegate.swift */,
 				D2AA590A2C90424B00C3EE91 /* Helper.swift */,
+				D2606B3D2C95DC27003C7479 /* UserRepository.swift */,
 				D2AA590C2C90CBF300C3EE91 /* Person.swift */,
 				D20119132C921E6D00F0F7A5 /* User.swift */,
 				D2AA58FA2C90409D00C3EE91 /* ViewController.swift */,
@@ -146,6 +149,7 @@
 				D2AA590D2C90CBF300C3EE91 /* Person.swift in Sources */,
 				D2AA58FB2C90409D00C3EE91 /* ViewController.swift in Sources */,
 				D20119142C921E6D00F0F7A5 /* User.swift in Sources */,
+				D2606B3E2C95DC27003C7479 /* UserRepository.swift in Sources */,
 				D2AA58F72C90409D00C3EE91 /* AppDelegate.swift in Sources */,
 				D2AA58F92C90409D00C3EE91 /* SceneDelegate.swift in Sources */,
 				D2AA590B2C90424B00C3EE91 /* Helper.swift in Sources */,

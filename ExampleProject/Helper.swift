@@ -4,7 +4,7 @@ class Helper {
     
     private var people: [User] = []
     
-    func getUsers() -> [User] {
+    func getPeople() -> [User] {
         people
     }
     
@@ -18,7 +18,13 @@ class Helper {
         return fullNames
     }
     
-    func addName(_ person: User) {
-        people.append(person)
+    func addName(_ user: User) {
+        people.append(user)
+    }
+    
+    func addMultipleNames(_ users: [User]){
+        for user in users{
+            people.append(user)
+        }
     }
 }
