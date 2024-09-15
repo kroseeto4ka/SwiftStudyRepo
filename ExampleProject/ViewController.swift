@@ -13,17 +13,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .magenta
-        view.alpha = CGFloat(0.9)
+        view.alpha = 0.9
         
         printPeople()
     }
     
     private func printPeople(){
-        let people: UserRepository = UserRepository()
-        
-        for person in people.getUsers() {
+        for person in getPeopleArray() {
             print("Full name: \(person.getName().fullName); login: \(person.getLogin()); password: \(person.getPassword())")
         }
+    }
+    
+    private func getPeopleArray() -> [User] {
+        let people: UserRepository = UserRepository()
+        
+        return people.getUsers()
     }
 }
 

@@ -13,6 +13,12 @@ struct User {
     private let password: String
     private let name: Person
     
+    init(login: String, password: String, name: Person) {
+        self.login = login
+        self.password = password
+        self.name = name
+    }
+    
     func getName() -> Person {
         name
     }
@@ -23,11 +29,5 @@ struct User {
     
     func getLogin() -> String {
         login
-    }
-    
-    init(login: String, password: String, name: Person) {
-        self.login = login
-        self.password = password
-        self.name = name
     }
 }
