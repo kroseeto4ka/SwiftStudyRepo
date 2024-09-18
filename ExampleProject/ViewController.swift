@@ -33,23 +33,28 @@ class ViewController: UIViewController {
     }
     
     private func printPeople(){
-        for person in getPeopleArray() {
-            print("Full name: \(person.getName().fullName); login: \(person.getLogin()); password: \(person.getPassword())")
+        for person in setupNames().getNames() {
+            print(person)
         }
     }
     
-    private func getPeopleArray() -> [User] {
-        let people: UserRepository = UserRepository()
-        
-        return people.getUsers()
-    }
-    
     private func setupLabel(){
-        let randomPerson = getPeopleArray().randomElement()?.getName().fullName
-        textLabel.text = "\(randomPerson ?? "No name")";
+        let randomPerson = setupNames().getPeople().randomElement()
+        let personName = randomPerson?.getName().fullName
+        textLabel.text = "\(personName ?? "No name")";
         textLabel.font = .systemFont(ofSize: 25, weight: .regular)
         textLabel.textColor = .blue
         textLabel.frame = CGRect(x: 100, y: 100, width: 200, height: 50) // увеличил самостоятельно ширину, тк имена не влезали в это поле
+    }
+    
+    //вынес генерацию имен в отдельную функцию, чтобы они могли выводиться и на экран, и в консоль
+    private func setupNames() -> Helper{
+        let people: Helper = Helper()
+        
+        people.addUsers([User(login: "Aboba123", password: "qwerty12345", name: Person(firstName: "Linus", lastName: "Torwalds"))])
+        people.addUsers([User(login: "CodeHacker420", password: "$f8K!h27Bf@4", name: Person(firstName: "Bjarne", lastName: "Stroustrup"))])
+        
+        return people
     }
 }
 
