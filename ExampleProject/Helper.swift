@@ -2,23 +2,15 @@ import Foundation
 
 class Helper {
     
-    private var people = UserRepository()
+    private var people: [User] = []
     
     func getPeople() -> [User] {
-        people.getUsers()
+        people
     }
     
-    func getNames() -> [String] {
-        var fullNames: [String] = []
+    func updateNamesFromRepo() {
+        var users: UserRepository = UserRepository()
         
-        for person in UserRepository().getUsers() {
-            fullNames.append(person.getName().fullName)
-        }
-        
-        return fullNames
-    }
-    
-    func addUsers(_ users: [User]){
-        people.addUsers(users)
+        people.append(contentsOf: users.getUsers())
     }
 }
