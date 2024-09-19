@@ -9,8 +9,6 @@ class Helper {
     }
     
     func updateNamesFromRepo() {
-        var users: UserRepository = UserRepository()
-        
-        people.append(contentsOf: users.getUsers())
+        people.append(contentsOf: UserRepository().getUsers())
     }
 }
