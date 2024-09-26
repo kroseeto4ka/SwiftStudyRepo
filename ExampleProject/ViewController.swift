@@ -18,9 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemCyan
-        view.alpha = 0.9
-        
         helper.updateNamesFromRepo() //апдейт имён репозитория
         
         printPeople()
