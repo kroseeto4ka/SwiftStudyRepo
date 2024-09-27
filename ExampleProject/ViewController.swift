@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     private let textLabel = UILabel()
-    private let button = UIButton()
-    private let buttonContainerView = UIView()
+    private let showUserButton = CustomButton(buttonSelfColor: .systemRed, buttonTextColor: .systemOrange, buttonText: "Show New User", isShadowRequired: false)
+    private let hideUserButton = CustomButton(buttonSelfColor: .systemGreen, buttonTextColor: .systemOrange, buttonText: "Hide User", isShadowRequired: true)
+    private let stackView = UIStackView()
+    
     private let helper = Helper()
     private let userRepository = UserRepository()
-    private let stackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,6 @@ class ViewController: UIViewController {
         printPeople()
         
         setupLabel()
-        setupButtonView()
-        setupButton()
         setupStackView()
         view.addSubview(stackView)
         setupLayout()
@@ -41,26 +40,9 @@ class ViewController: UIViewController {
         let randomPerson = helper.getPeople().randomElement()
         let personName = randomPerson?.getName().fullName
         textLabel.text = "\(personName ?? "No name")";
-        textLabel.font = .systemFont(ofSize: 25, weight: .heavy)
+        textLabel.font = .systemFont(ofSize: 30, weight: .heavy)
         textLabel.textColor = .systemOrange
         textLabel.textAlignment = .center
-    }
-    
-    private func setupButton() {
-        button.setTitle("Show fullName", for: .normal)
-        button.setTitleColor(.systemOrange, for: button.state)
-        button.backgroundColor = .systemIndigo
-        button.layer.cornerRadius = 20
-        
-        buttonContainerView.addSubview(button)
-    }
-    
-    //создал стек для отображения тени у кнопки
-    private func setupButtonView() {
-        buttonContainerView.layer.shadowColor = UIColor.systemOrange.cgColor
-        buttonContainerView.layer.shadowOffset = CGSize(width: 10, height: 10)
-        buttonContainerView.layer.shadowOpacity = 1
-        buttonContainerView.layer.shadowRadius = 10
     }
     
     private func setupStackView() {
@@ -70,7 +52,8 @@ class ViewController: UIViewController {
         stackView.alignment = .fill
         
         stackView.addArrangedSubview(textLabel)
-        stackView.addArrangedSubview(buttonContainerView)
+        stackView.addArrangedSubview(showUserButton)
+        stackView.addArrangedSubview(hideUserButton)
     }
     
     private func setupView() {
@@ -85,8 +68,8 @@ class ViewController: UIViewController {
     
     private func setupLayout() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonContainerView.translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
+        showUserButton.translatesAutoresizingMaskIntoConstraints = false
+        hideUserButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             //задал констрейнты стека привязкой через края, а не центр
@@ -94,11 +77,6 @@ class ViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300),
-            
-            button.topAnchor.constraint(equalTo: buttonContainerView.topAnchor),
-            button.bottomAnchor.constraint(equalTo: buttonContainerView.bottomAnchor),
-            button.leadingAnchor.constraint(equalTo: buttonContainerView.leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: buttonContainerView.trailingAnchor)
         ])
     }
 }
