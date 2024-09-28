@@ -9,9 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     private let textLabel = UILabel()
-    private let showUserButton = CustomButton(buttonSelfColor: .systemRed, buttonTextColor: .systemOrange, buttonText: "Show New User", isShadowRequired: false)
-    private let hideUserButton = CustomButton(buttonSelfColor: .systemGreen, buttonTextColor: .systemOrange, buttonText: "Hide User", isShadowRequired: true)
     private let stackView = UIStackView()
+    private let showUserButton = CustomButton(
+        buttonSelfColor: .systemRed,
+        buttonTextColor: .systemOrange,
+        buttonText: "Show New User",
+        isShadowRequired: false)
+    private let hideUserButton = CustomButton(
+        buttonSelfColor: .systemGreen,
+        buttonTextColor: .systemOrange,
+        buttonText: "Hide User",
+        isShadowRequired: true)
     
     private let helper = Helper()
     private let userRepository = UserRepository()
