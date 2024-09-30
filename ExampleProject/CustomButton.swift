@@ -22,6 +22,12 @@ class CustomButton: UIView {
         setupLayout()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
+    }
+    
     private func setupButton(_ buttonSelfColor: UIColor,_ buttonTextColor: UIColor, _ text: String) {
         button.setTitle(text, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 26)
