@@ -25,12 +25,17 @@ class CustomButton: UIButton {
         layer.shadowPath = shadowPath.cgPath
     }
     
+    
+}
+
+// MARK: - Setup view
+extension CustomButton {
     private func setupButton(_ buttonSelfColor: UIColor,_ buttonTextColor: UIColor, _ text: String, _ isShadowRequired: Bool) {
         setTitle(text, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 26)
         setTitleColor(buttonTextColor, for: state)
         backgroundColor = buttonSelfColor
-        layer.cornerRadius = 20
+        layer.cornerRadius = Constant.corner20
         
         if isShadowRequired {
             layer.shadowColor = UIColor.black.cgColor
@@ -38,5 +43,12 @@ class CustomButton: UIButton {
             layer.shadowOpacity = 0.7
             
         }
+    }
+}
+
+// MARK: - Constants
+extension CustomButton {
+    enum Constant {
+        static let corner20 = CGFloat(20)
     }
 }
