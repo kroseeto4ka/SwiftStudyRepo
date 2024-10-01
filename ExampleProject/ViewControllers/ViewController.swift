@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         
         setupLabel()
         setupStackView()
-        view.addSubview(stackView)
+        view.addMultipleSubviews([stackView]) //метод с множественым добавлением вьюх
         setupLayout()
         setupView()
     }
@@ -43,12 +43,15 @@ class ViewController: UIViewController {
             print(person)
         }
     }
-    
+}
+
+// MARK: - Setup view
+extension ViewController {
     private func setupLabel() {
         let randomPerson = helper.getPeople().randomElement()
         let personName = randomPerson?.getName().fullName
         textLabel.text = "\(personName ?? "No name")";
-        textLabel.font = .systemFont(ofSize: 30, weight: .heavy)
+        textLabel.font = .systemFont(ofSize: Constant.font30, weight: .heavy)
         textLabel.textColor = .systemOrange
         textLabel.textAlignment = .center
     }
@@ -59,21 +62,26 @@ class ViewController: UIViewController {
         stackView.spacing = 20
         stackView.alignment = .fill
         
-        stackView.addArrangedSubview(textLabel)
-        stackView.addArrangedSubview(showUserButton)
-        stackView.addArrangedSubview(hideUserButton)
+        stackView.addMultipleArrangedSubviews([
+            textLabel,
+            showUserButton,
+            hideUserButton
+        ])
     }
     
     private func setupView() {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.systemPink.cgColor, UIColor.systemCyan.cgColor, UIColor.systemPink.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 0)
-        
-        view.layer.insertSublayer(gradient, at: 0)
+        view.addGradient(
+            colors:
+                [UIColor.systemPink.cgColor,
+                 UIColor.systemCyan.cgColor,
+                 UIColor.systemPink.cgColor],
+            startPoint: CGPoint(x: 0, y: 1),
+            endPoint: CGPoint(x: 1, y: 0))
     }
-    
+}
+
+// MARK: - Setup layout
+extension ViewController {
     private func setupLayout() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         showUserButton.translatesAutoresizingMaskIntoConstraints = false
@@ -89,3 +97,9 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Nested types
+extension ViewController {
+    enum Constant {
+        static let font30 = CGFloat(30)
+    }
+}
